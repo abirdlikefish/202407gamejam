@@ -9,6 +9,7 @@ public class EnemyBase : MonoBehaviour
     public float patroTime;//巡逻时间
     public float leaveActTime;//离开攻击状态时间
     public float actCheckLen;//用于检测玩家的射线长度
+    public Transform target;//当前敌人的攻击目标
 
     public int isLeft = 1;
     //[HideInInspector]public float clock = 0f;
@@ -25,5 +26,9 @@ public class EnemyBase : MonoBehaviour
     public virtual bool CheckDead()
     {
         return blood <= 0;
+    }
+    public virtual bool CheckPlayer()
+    {
+        return default;
     }
 }
