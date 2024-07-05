@@ -29,6 +29,7 @@ public class Statemachine
 
         currentStateEnum = StateEnum.Idle;//开始时进入idle状态
         currentState = enum_state[currentStateEnum];
+        currentState.OnEnter();
     }
     public void OnUpdate()
     {
