@@ -5,24 +5,33 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
+    private Statemachine _stateMachine;
+    private float _speed ;
 
     private void Awake()
     {
         InitStateMachine();
     }
+    private void Update()
+    {
+        _stateMachine.OnUpdate();
+        _stateMachine.OnLateUpdate();
+    }
+    private void FixedUpdate()
+    {
+        _stateMachine.OnFixedUpdate();
+    }
     void InitStateMachine()
     {
-        
+        _stateMachine = new Statemachine(this);
     }
 
-    public void SetVelocity(Vector2 velocity)
+    public Vector2 SetVelocity()
     {
-        rb.velocity = velocity;
-    }
-    public Vector2 GetVector2()
-    {
-        return rb.velocity;
+        Vector2 mid = InputBuffer.Instance.GetInputDirection();
+        _rb.velocity = new Vector2(mid.x * _speed , _rb.velocity.y);
+        return _rb.velocity;
     }
     public void SetLookDIrection(bool isRight)
     {
