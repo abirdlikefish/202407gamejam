@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class State
 {
+    public Player player;
+
+    public State(Player player)
+    {
+        this.player = player;
+    }
+
     public virtual void OnEnter()
     {
+        
     }
     public virtual void OnUpdate()
     {

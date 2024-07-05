@@ -21,11 +21,17 @@ public class Statemachine
     public State currentState;
     public StateEnum currentStateEnum;
     
-    
-    public void Init()
+    public Statemachine(Player player)
     {
-        enum_state[StateEnum.Idle] = new IdleState();
-        enum_state[StateEnum.Move] = new MoveState();
+        enum_state[StateEnum.Idle] = new IdleState(player);
+        enum_state[StateEnum.Move] = new MoveState(player);
+        enum_state[StateEnum.Act] = new ActState(player);
+        enum_state[StateEnum.Acted] = new ActedState(player);
+        enum_state[StateEnum.Across] = new AcrossState(player);
+        enum_state[StateEnum.Split] = new SplitState(player);
+        enum_state[StateEnum.Jump] = new JumpState(player);
+        enum_state[StateEnum.Fall] = new FallState(player);
+        enum_state[StateEnum.Dead] = new DeadState(player);
 
         currentStateEnum = StateEnum.Idle;//开始时进入idle状态
         currentState = enum_state[currentStateEnum];
