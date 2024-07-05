@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class ActedState : State
 {
-    
+    public ActedState(Player player) : base(player)
+    {
+    }
 }

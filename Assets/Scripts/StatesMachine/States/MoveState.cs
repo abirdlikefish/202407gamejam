@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class MoveState : State
 {
-    
+    public MoveState(Player player) : base(player)
+    {
+    }
+
+    public override void OnUpdate()
+    {
+        
+        
+        
+    }
 }

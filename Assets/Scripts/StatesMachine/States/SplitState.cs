@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class SplitState : State
 {
-    
+    public SplitState(Player player) : base(player)
+    {
+    }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class IdleState : State
 {
+    public IdleState(Player player) : base(player)
+    {
+    }
+
     public override void OnEnter()
     {
     }
