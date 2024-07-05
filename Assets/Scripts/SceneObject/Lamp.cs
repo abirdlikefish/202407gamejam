@@ -13,17 +13,20 @@ public class Lamp : SceneObject
     {
         _isOn = isOn;
     }
-    public override void Use()
+    public override void Use(GameObject x)
     {
+        if (x.tag != "Button") return;
         if(_isOn)
         {
             EventManager.Instance.Event_noise.Invoke(transform.position, 0);
             _isOn = false;
+            gameObject.SetActive(false);
         }
         else
         {
             EventManager.Instance.Event_noise.Invoke(transform.position, 0);
             _isOn = true;
+            gameObject.SetActive(true);
         }
     }
 }

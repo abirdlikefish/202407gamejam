@@ -25,6 +25,7 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     struct InputTime
     {
         public float direction;
+        public float jump;
     }
     InputTime inputTime;
 
@@ -62,7 +63,8 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        ((InputSystem.IGamePlayActions)Instance).OnJump(context);
+        inputTime.jump = Time.time;
+        //Debug.Log("jummp");
     }
 
 
@@ -72,6 +74,13 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     public float GetInputDirection()
     {
         return inputTime.direction;
+    }
+
+    public bool IsJump()
+    {
+        bool ans = Time.time - inputTime.jump < 0.1f;
+        inputTime.jump = -1;
+        return ans;
     }
 
 

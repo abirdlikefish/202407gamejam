@@ -17,11 +17,13 @@ public class Player : MonoBehaviour
         InitStateMachine();
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _speed = 3;
+        _jumpHeight = 3;
     }
     private void Update()
     {
         _stateMachine.OnUpdate();
         _stateMachine.OnLateUpdate();
+        Jump();
     }
     private void FixedUpdate()
     {
@@ -53,7 +55,11 @@ public class Player : MonoBehaviour
     public Vector2 Jump()
     {
         float jumpSpeed = Mathf.Sqrt(2 * _jumpHeight * Physics2D.gravity.y * -1);
-        _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+        if(IsOnGround() && InputBuffer.Instance.IsJump())
+        {
+            Debug.Log("jump");
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+        }
         return _rb.velocity;
     }
     public void SetLookDIrection(bool isRight)
@@ -74,8 +80,8 @@ public class Player : MonoBehaviour
         {
             return false;
         }
+        mid.GetComponent<SceneObject>().Use(gameObject);
         return true;
-        mid.GetComponent<SceneObject>().Use();
     }
     public bool IsOnGround()
     {
@@ -87,6 +93,11 @@ public class Player : MonoBehaviour
     public bool CheckDead()//检查当前是否死亡,若blood小于等于0,则返回true;
     {
         return blood <= 0;
+    }
+
+    public void BeAttacked()
+    {
+
     }
 
 }
