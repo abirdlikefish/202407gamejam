@@ -35,7 +35,18 @@ public class Player : MonoBehaviour
     public Vector2 SetVelocity()
     {
         float mid = InputBuffer.Instance.GetInputDirection();
-        //Debug.Log(mid);
+        if(mid == 0)
+        {
+
+        }
+        else if (mid < 0)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
         _rb.velocity = new Vector2(mid * _speed , _rb.velocity.y);
         return _rb.velocity;
     }
@@ -55,6 +66,16 @@ public class Player : MonoBehaviour
         {
 
         }
+    }
+    public bool UseSceneObject()
+    {
+        Collider2D mid = Physics2D.OverlapCircle(transform.position, 0.3f, LayerMask.GetMask("SceneObject"));
+        if(mid == null)
+        {
+            return false;
+        }
+        return true;
+        mid.GetComponent<SceneObject>().Use();
     }
     public bool IsOnGround()
     {
