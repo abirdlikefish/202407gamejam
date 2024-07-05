@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         InitStateMachine();
+        _rb = gameObject.GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -29,9 +30,14 @@ public class Player : MonoBehaviour
 
     public Vector2 SetVelocity()
     {
-        Vector2 mid = InputBuffer.Instance.GetInputDirection();
-        _rb.velocity = new Vector2(mid.x * _speed , _rb.velocity.y);
+        Debug.Log("ask for move");
+        float mid = InputBuffer.Instance.GetInputDirection();
+        _rb.velocity = new Vector2(mid* _speed , _rb.velocity.y);
         return _rb.velocity;
+    }
+    public Vector2 Jump()
+    {
+        return default;
     }
     public void SetLookDIrection(bool isRight)
     {
@@ -46,8 +52,16 @@ public class Player : MonoBehaviour
     }
     public bool IsOnGround()
     {
-
         return Physics2D.Raycast(transform.position, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
-        
+    }
+    public bool UseSceneObject()
+    {
+        Collider2D mid = Physics2D.OverlapCircle(transform.position, 0.5f, LayerMask.GetMask("SceneObject"));
+        if(mid == null)
+        {
+            return false;
+        }
+        mid.GetComponent<SceneObject>().Use();
+        return true;
     }
 }
