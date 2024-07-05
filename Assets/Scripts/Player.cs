@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
 
     public Vector2 SetVelocity()
     {
-        Vector2 mid = InputBuffer.Instance.GetInputDirection();
-        _rb.velocity = new Vector2(mid.x * _speed , _rb.velocity.y);
+        float mid = InputBuffer.Instance.GetInputDirection();
+        _rb.velocity = new Vector2(mid * _speed , _rb.velocity.y);
         return _rb.velocity;
     }
     public void SetLookDIrection(bool isRight)
