@@ -18,12 +18,25 @@ public class Statemachine
     public Dictionary<StateEnum, State> enum_state = new Dictionary<StateEnum, State>();
     public State currentState;
     public StateEnum currentStateEnum;
+    public StateEnum lastStateEnum;//上一个状态
     
     public Statemachine(Player player)
     {
+        Init(player);
+    }
+
+    public void Init(Player player)
+    {
         enum_state[StateEnum.Dead] = new DeadState(player,this);
+        enum_state[StateEnum.Hand_0] = new Hand_0_State(player,this);
+        enum_state[StateEnum.Hand_1] = new Hand_1_State(player,this);
+        enum_state[StateEnum.Hand_2] = new Hand_2_State(player,this);
+        enum_state[StateEnum.Hand_0_Foot_2] = new Hand_0_Foot_2_State(player,this);
+        enum_state[StateEnum.Hand_1_Foot_2] = new Hand_1_Foot_2_State(player,this);
+        enum_state[StateEnum.Hand_2_Foot_2] = new Hand_2_Foot_2_State(player,this);
 
         currentStateEnum = StateEnum.Hand_0;//开始时进入只有一个头状态
+        //currentStateEnum = StateEnum.Hand_1_Foot_2;//测试移动
         currentState = enum_state[currentStateEnum];
         currentState.OnEnter();
     }
@@ -35,20 +48,21 @@ public class Statemachine
     {
         currentState.OnFixedUpdate();
     }
-
     public void OnLateUpdate()
     {
         currentState.OnLateUpdate();
     }
-
-    public void OnChangeState(StateEnum newState)
+    public void OnChangeState(StateEnum newStateEnum)
     {
-        State nextState = enum_state[newState];
-        
-        currentStateEnum = newState;
+        State nextState = enum_state[newStateEnum];
+
+        lastStateEnum = currentStateEnum;
+        currentStateEnum = newStateEnum;
         
         currentState.OnExit();
         currentState = nextState;
         currentState.OnEnter();
     }
+    
+    
 }

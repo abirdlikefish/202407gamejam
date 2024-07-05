@@ -19,6 +19,10 @@ public class State
     }
     public virtual void OnUpdate()
     {
+        if (player.CheckDead())
+        {
+            statemachine.OnChangeState(StateEnum.Dead);
+        }
     }
     public virtual void OnFixedUpdate()
     {

@@ -12,4 +12,10 @@ public class Hand_0_State : State
     {
         player.blood = 1;
     }
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        player.SetVelocity();//水平移动
+    }
 }

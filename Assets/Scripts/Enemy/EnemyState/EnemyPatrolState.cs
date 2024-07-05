@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolState : MonoBehaviour
+public class EnemyPatrolState : EnemyState
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemyPatrolState(EnemyBase enemy, EnemyStateMachine enemystatemachine) : base(enemy, enemystatemachine)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEnter()
     {
-        
+        enemy.clock = 0f;
     }
+
+    public override void OnUpdate()
+    {
+        enemy.clock += Time.deltaTime;
+        if (enemy.clock >= enemy.patroTime)
+        {
+            enemystatemachine.OnChangeState(EnemyStateEnum.Idle);
+        }
+        enemy.transform.position += new Vector3(enemy.isLeft * enemy.moveSpeed * Time.deltaTime, 0, 0);
+    }
+
 }
