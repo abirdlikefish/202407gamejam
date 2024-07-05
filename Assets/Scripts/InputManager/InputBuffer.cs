@@ -24,7 +24,7 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
 
     struct InputTime
     {
-        public Vector2 direction;
+        public float direction;
     }
     InputTime inputTime;
 
@@ -58,17 +58,22 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        inputTime.direction = context.ReadValue<Vector2>();
+        inputTime.direction = context.ReadValue<float>();
+    }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        ((InputSystem.IGamePlayActions)Instance).OnJump(context);
     }
 
 
     #region outside request
 
     // 
-    public Vector2 GetInputDirection()
+    public float GetInputDirection()
     {
         return inputTime.direction;
     }
+
 
     #endregion
 

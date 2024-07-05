@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         InitStateMachine();
-        _rb = transform.GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -47,6 +46,8 @@ public class Player : MonoBehaviour
     }
     public bool IsOnGround()
     {
+
         return Physics2D.Raycast(transform.position, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
+        
     }
 }
