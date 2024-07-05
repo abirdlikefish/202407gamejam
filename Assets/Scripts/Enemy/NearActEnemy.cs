@@ -20,7 +20,7 @@ public class NearActEnemy : EnemyBase
         //最后一个参数改为玩家所在layer
         //if (Physics.Raycast(transform.position, Vector3.left, out RaycastHit hit, actCheckLen, 1 << 8))
         Debug.Log(Physics.Raycast(transform.position, Vector3.left, actCheckLen));
-        if (Physics.Raycast(transform.position, Vector3.left, out RaycastHit hit, actCheckLen, ~LayerMask.GetMask("Player")))
+        if (Physics.Raycast(transform.position, Vector3.left, out RaycastHit hit, actCheckLen, LayerMask.GetMask("Player")))
         {
             Debug.Log("aaaa");
         }
