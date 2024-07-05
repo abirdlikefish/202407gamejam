@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int blood;//剩下可以被击中的次数
+    
     private Rigidbody2D _rb;
     private Statemachine _stateMachine;
     private float _speed ;
@@ -60,4 +62,10 @@ public class Player : MonoBehaviour
         return Physics2D.Raycast(transform.position, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
         
     }
+
+    public bool CheckDead()//检查当前是否死亡,若blood小于等于0,则返回true;
+    {
+        return blood <= 0;
+    }
+
 }

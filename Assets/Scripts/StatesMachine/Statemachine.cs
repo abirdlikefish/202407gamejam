@@ -4,14 +4,12 @@ using UnityEngine;
 
 public enum StateEnum
 {
-    Idle=0,//待机
-    Move,//移动
-    Act,//攻击
-    Acted,//受击
-    Across,//穿过管道
-    Split,//拆零件
-    Jump,//跳跃
-    Fall,//降落
+    Hand_0 = 0,//没有手,只有一个头
+    Hand_1,//一手
+    Hand_2,//双手
+    Hand_2_Foot_2,//双手双脚
+    Hand_1_Foot_2,//单手双脚
+    Hand_0_Foot_2,//0手双脚
     Dead//死亡
 }
 
@@ -23,17 +21,9 @@ public class Statemachine
     
     public Statemachine(Player player)
     {
-        enum_state[StateEnum.Idle] = new IdleState(player,this);
-        enum_state[StateEnum.Move] = new MoveState(player,this);
-        enum_state[StateEnum.Act] = new ActState(player,this);
-        enum_state[StateEnum.Acted] = new ActedState(player,this);
-        enum_state[StateEnum.Across] = new AcrossState(player,this);
-        enum_state[StateEnum.Split] = new SplitState(player,this);
-        enum_state[StateEnum.Jump] = new JumpState(player,this);
-        enum_state[StateEnum.Fall] = new FallState(player,this);
         enum_state[StateEnum.Dead] = new DeadState(player,this);
 
-        currentStateEnum = StateEnum.Idle;//开始时进入idle状态
+        currentStateEnum = StateEnum.Hand_0;//开始时进入只有一个头状态
         currentState = enum_state[currentStateEnum];
         currentState.OnEnter();
     }
