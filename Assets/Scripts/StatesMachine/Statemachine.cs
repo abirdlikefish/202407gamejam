@@ -23,15 +23,15 @@ public class Statemachine
     
     public Statemachine(Player player)
     {
-        enum_state[StateEnum.Idle] = new IdleState(player);
-        enum_state[StateEnum.Move] = new MoveState(player);
-        enum_state[StateEnum.Act] = new ActState(player);
-        enum_state[StateEnum.Acted] = new ActedState(player);
-        enum_state[StateEnum.Across] = new AcrossState(player);
-        enum_state[StateEnum.Split] = new SplitState(player);
-        enum_state[StateEnum.Jump] = new JumpState(player);
-        enum_state[StateEnum.Fall] = new FallState(player);
-        enum_state[StateEnum.Dead] = new DeadState(player);
+        enum_state[StateEnum.Idle] = new IdleState(player,this);
+        enum_state[StateEnum.Move] = new MoveState(player,this);
+        enum_state[StateEnum.Act] = new ActState(player,this);
+        enum_state[StateEnum.Acted] = new ActedState(player,this);
+        enum_state[StateEnum.Across] = new AcrossState(player,this);
+        enum_state[StateEnum.Split] = new SplitState(player,this);
+        enum_state[StateEnum.Jump] = new JumpState(player,this);
+        enum_state[StateEnum.Fall] = new FallState(player,this);
+        enum_state[StateEnum.Dead] = new DeadState(player,this);
 
         currentStateEnum = StateEnum.Idle;//开始时进入idle状态
         currentState = enum_state[currentStateEnum];

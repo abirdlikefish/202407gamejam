@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JumpState : State
 {
-    public JumpState(Player player) : base(player)
+    public JumpState(Player player, Statemachine statemachine) : base(player, statemachine)
     {
+        
     }
 }

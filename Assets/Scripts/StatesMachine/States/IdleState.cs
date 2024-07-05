@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public IdleState(Player player) : base(player)
+    public IdleState(Player player, Statemachine statemachine) : base(player, statemachine)
     {
     }
 
@@ -14,6 +14,10 @@ public class IdleState : State
 
     public override void OnUpdate()
     {
-        
+        if (Mathf.Abs(player.SetVelocity().x) > float.Epsilon)//当前输入的速度大于0,切换状态到Move
+        {
+            statemachine.OnChangeState(StateEnum.Move);
+            return;
+        }
     }
 }

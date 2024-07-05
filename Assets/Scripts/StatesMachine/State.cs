@@ -5,10 +5,12 @@ using UnityEngine;
 public class State
 {
     public Player player;
+    public Statemachine statemachine;
 
-    public State(Player player)
+    public State(Player player,Statemachine statemachine)
     {
         this.player = player;
+        this.statemachine = statemachine;
     }
 
     public virtual void OnEnter()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AcrossState : State
 {
-    public AcrossState(Player player) : base(player)
+    public AcrossState(Player player, Statemachine statemachine) : base(player, statemachine)
     {
     }
 }

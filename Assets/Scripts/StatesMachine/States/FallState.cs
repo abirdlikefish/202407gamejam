@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallState : State
 {
-    public FallState(Player player) : base(player)
+    public FallState(Player player, Statemachine statemachine) : base(player, statemachine)
     {
     }
 }

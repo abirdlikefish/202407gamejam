@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActState : State
 {
-    public ActState(Player player) : base(player)
+    public ActState(Player player, Statemachine statemachine) : base(player, statemachine)
     {
     }
 }
