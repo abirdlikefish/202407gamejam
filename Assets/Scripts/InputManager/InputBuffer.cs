@@ -26,6 +26,8 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     {
         public float direction;
         public float jump;
+        public float split;
+        public float use;
     }
     InputTime inputTime;
 
@@ -39,6 +41,12 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         }
         _inputSystem.GamePlay.SetCallbacks(this);
         _inputSystem.UI.SetCallbacks(this);
+        UseGamePlayMap();
+
+        inputTime.jump = -5;
+        inputTime.split = -5;
+        inputTime.direction = 0;
+        inputTime.use = -5;
     }
 
     public void UseGamePlayMap()
@@ -63,8 +71,25 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        inputTime.jump = Time.time;
+        if(context.phase == InputActionPhase.Started)
+            inputTime.jump = Time.time;
         //Debug.Log("jummp");
+    }
+    public void OnSplit(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            inputTime.split = -1;
+        }
+        if (context.phase == InputActionPhase.Started)
+        {
+            inputTime.split = Time.time;
+        }
+    }
+    public void OnUse(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+            inputTime.use = Time.time;
     }
 
 
@@ -82,6 +107,23 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         inputTime.jump = -1;
         return ans;
     }
+    public bool IsUse()
+    {
+        bool ans = Time.time - inputTime.use< 0.1f;
+        inputTime.use = -1;
+        return ans;
+    }
+    public bool IsSplit()
+    {
+        float mid = Time.time - inputTime.split;
+        if( 1 < mid && mid < 1.5 )
+        {
+            inputTime.split = -5;
+            return true;
+        }
+        return false;
+    }
+
 
 
     #endregion

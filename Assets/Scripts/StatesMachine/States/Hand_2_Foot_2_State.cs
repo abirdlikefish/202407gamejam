@@ -10,14 +10,16 @@ public class Hand_2_Foot_2_State : State
     
     public override void OnEnter()
     {
-        player.blood = 4;
+        player.SetParts(3);
+        player.AnimationBeg();
     }
     public override void OnUpdate()
     {
-        base.OnUpdate();
+        //base.OnUpdate();
 
         player.SetVelocity();//水平移动
         player.Jump();//跳跃
-        //场景交互检查
+        player.UseSceneObject();
+        player.Split();
     }
 }

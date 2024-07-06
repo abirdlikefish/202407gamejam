@@ -12,17 +12,16 @@ public class State
         this.player = player;
         this.statemachine = statemachine;
     }
-
     public virtual void OnEnter()
     {
         
     }
     public virtual void OnUpdate()
     {
-        if (player.CheckDead())
-        {
-            statemachine.OnChangeState(StateEnum.Dead);
-        }
+//        if (player.CheckDead())
+//        {
+//            statemachine.OnChangeState(StateEnum.Dead);
+//        }
     }
     public virtual void OnFixedUpdate()
     {

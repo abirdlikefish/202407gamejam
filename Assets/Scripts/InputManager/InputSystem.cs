@@ -44,6 +44,24 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Split"",
+                    ""type"": ""Button"",
+                    ""id"": ""827ca0d7-402d-42c5-8e28-523d827c5d4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""e312af56-edb3-41ef-aebd-e02aef6fe906"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -90,6 +108,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a5b6481-852f-44a6-909c-f11aa3f7c5c7"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Split"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00bf6fe9-b31d-437b-b7a3-26d5d9209bf9"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -128,6 +168,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
+        m_GamePlay_Split = m_GamePlay.FindAction("Split", throwIfNotFound: true);
+        m_GamePlay_Use = m_GamePlay.FindAction("Use", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -194,12 +236,16 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Jump;
+    private readonly InputAction m_GamePlay_Split;
+    private readonly InputAction m_GamePlay_Use;
     public struct GamePlayActions
     {
         private @InputSystem m_Wrapper;
         public GamePlayActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
+        public InputAction @Split => m_Wrapper.m_GamePlay_Split;
+        public InputAction @Use => m_Wrapper.m_GamePlay_Use;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -215,6 +261,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Split.started += instance.OnSplit;
+            @Split.performed += instance.OnSplit;
+            @Split.canceled += instance.OnSplit;
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -225,6 +277,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Split.started -= instance.OnSplit;
+            @Split.performed -= instance.OnSplit;
+            @Split.canceled -= instance.OnSplit;
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -292,6 +350,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnSplit(InputAction.CallbackContext context);
+        void OnUse(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
