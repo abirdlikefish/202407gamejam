@@ -20,6 +20,5 @@ public class Hand_1_State : State
 
         player.SetVelocity();
         player.UseSceneObject();
-        player.Split();
     }
 }

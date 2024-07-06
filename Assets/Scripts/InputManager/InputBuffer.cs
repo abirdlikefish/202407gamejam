@@ -28,6 +28,7 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         public float jump;
         public float split;
         public float use;
+        public float attack;
     }
     InputTime inputTime;
 
@@ -47,6 +48,7 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         inputTime.split = -5;
         inputTime.direction = 0;
         inputTime.use = -5;
+        inputTime.attack = -5;
     }
 
     public void UseGamePlayMap()
@@ -91,6 +93,13 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         if (context.phase == InputActionPhase.Started)
             inputTime.use = Time.time;
     }
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            inputTime.attack= Time.time;
+        }
+    }
 
 
     #region outside request
@@ -109,8 +118,14 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
     }
     public bool IsUse()
     {
-        bool ans = Time.time - inputTime.use< 0.1f;
+        bool ans = Time.time - inputTime.use < 0.1f;
         inputTime.use = -1;
+        return ans;
+    }
+    public bool IsAttack()
+    {
+        bool ans = Time.time - inputTime.attack< 0.1f;
+        inputTime.attack= -1;
         return ans;
     }
     public bool IsSplit()
@@ -123,6 +138,7 @@ public class InputBuffer : MonoBehaviour , InputSystem.IUIActions , InputSystem.
         }
         return false;
     }
+
 
 
 
