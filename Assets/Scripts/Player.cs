@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
     }
     private bool IsOnGround()
     {
-
+//        Debug.Log(Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground")));
         return Physics2D.Raycast(transform.position, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
     }
     public void AnimationBeg()
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
     public bool UseSceneObject()
     {
         if (InputBuffer.Instance.IsUse() == false) return false;
-        Collider2D mid = Physics2D.OverlapBox(transform.position, new Vector2(10, 1) , 0 , LayerMask.GetMask("PlayerParts"));
+        Collider2D mid = Physics2D.OverlapBox(transform.position, new Vector2(2, 1) , 0 , LayerMask.GetMask("PlayerParts"));
         //Debug.Log("layermaske = " + LayerMask.GetMask("PlayerParts"));
         if (mid != null)
         {
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
     }
     public void AddPart(uint x)
     {
-        Debug.Log("addpart");
+//        Debug.Log("addpart");
         _parts = x | _parts;
         ChangeState();
     }
@@ -184,11 +184,20 @@ public class Player : MonoBehaviour
         else
         {
             if (_parts == 1)
+            {
+                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
                 _parts = 0;
+            }
             else if (_parts == 2)
+            {
+                Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
                 _parts = 0;
+            }
             else if (_parts == 3)
+            {
+                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
                 _parts = 2;
+            }
         }
         ChangeState();
 
