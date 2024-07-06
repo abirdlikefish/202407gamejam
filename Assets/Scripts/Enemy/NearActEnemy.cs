@@ -11,21 +11,25 @@ public class NearActEnemy : EnemyBase
     {
         enemystatemachine.OnUpdate();
         enemystatemachine.OnLateUpdate();
-
-        CheckPlayer();
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            target = other.transform;
+            enemystatemachine.OnChangeState(EnemyStateEnum.NearAct);
+        }
+    }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            enemystatemachine.OnChangeState(EnemyStateEnum.Idle);
+        }
     }
 
-    public override bool CheckPlayer()
+    public override void ChangeToAct()
     {
-        //Debug.DrawLine(transform.position, transform.position + new Vector3(isLeft * actCheckLen, 0, 0));
-        
-        //最后一个参数改为玩家所在layer
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, actCheckLen, 1 << 8);
-        if (hit)
-        {
-            target = hit.transform;
-            return true;
-        }
-        return false;
+        enemystatemachine.OnChangeState(EnemyStateEnum.NearAct);
     }
 }

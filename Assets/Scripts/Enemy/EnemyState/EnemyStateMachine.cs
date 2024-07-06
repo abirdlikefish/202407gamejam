@@ -27,7 +27,7 @@ public class EnemyStateMachine
         enmy_enum_state[EnemyStateEnum.Dead] = new EnemyDeadState(enemy, this);
         enmy_enum_state[EnemyStateEnum.Idle] = new EnemyIdleState(enemy, this);
         enmy_enum_state[EnemyStateEnum.FarAct_1] = new EnemyFarAct_1State(enemy, this);
-        enmy_enum_state[EnemyStateEnum.FarAct_2] = new EnemyDeadState(enemy, this);
+        enmy_enum_state[EnemyStateEnum.FarAct_2] = new EnemyFarAct_2State(enemy, this);
         enmy_enum_state[EnemyStateEnum.NearAct] = new EnemyNearActState(enemy, this);
         enmy_enum_state[EnemyStateEnum.Patrol] = new EnemyPatrolState(enemy, this);
 

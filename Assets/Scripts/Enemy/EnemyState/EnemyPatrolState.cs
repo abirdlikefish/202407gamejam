@@ -21,11 +21,6 @@ public class EnemyPatrolState : EnemyState
             enemystatemachine.OnChangeState(EnemyStateEnum.Idle);
             return;
         }
-        if (enemy.CheckPlayer())
-        {
-            enemystatemachine.OnChangeState(EnemyStateEnum.NearAct);
-            return;
-        }
         enemy.transform.position += new Vector3(enemy.isLeft * enemy.moveSpeed * Time.deltaTime, 0, 0);
     }
 
