@@ -52,7 +52,7 @@ public class FarActEnemy_2 : EnemyBase
     public override void Act()
     {
         
-        GameObject.Instantiate(buttle,transform.position,Quaternion.identity).GetComponent<Buttle>().Init(target.position,buttleSpeed);
+        GameObject.Instantiate(buttle,transform.position+new Vector3(0f,1f,0f),Quaternion.identity).GetComponent<Buttle>().Init(target.position,buttleSpeed);
     }
 
     public override void ChangeToAct()

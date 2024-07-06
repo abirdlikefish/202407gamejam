@@ -180,6 +180,7 @@ public class Player : MonoBehaviour
         if (_parts == 0)
         {
             Debug.Log("you die");
+            Game.Instance.PlayerDie();
         }
         else
         {
@@ -225,5 +226,4 @@ public class Player : MonoBehaviour
             }
             ChangeState();
         }
-
 }

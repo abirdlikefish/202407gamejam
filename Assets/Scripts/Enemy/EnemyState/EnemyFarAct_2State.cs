@@ -10,7 +10,6 @@ public class EnemyFarAct_2State : EnemyState
 
     public override void OnEnter()
     {
-        Debug.Log("aaa");
         enemy.clock = 0f;
         enemy.Act();
     }
