@@ -12,7 +12,7 @@ public class EnemyIdleState : EnemyState
     public override void OnEnter()
     {
         enemy.clock = 0f;
-        enemy.transform.GetComponent<SpriteRenderer>().flipX ^= false;//翻转敌人
+        enemy.transform.localScale = new Vector3(-1f*enemy.transform.localScale.x,1f,1f);//翻转敌人
         enemy.isLeft *= -1;
     }
 
@@ -22,6 +22,8 @@ public class EnemyIdleState : EnemyState
         if (enemy.clock >= enemy.idleTime)
         {
             enemystatemachine.OnChangeState(EnemyStateEnum.Patrol);
+            return;
         }
+
     }
 }
