@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -13,12 +14,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - SceneObject
   - Player
   - Enemy
   - PlayerParts
-  - 
+  - Ground
   - 
   - 
   - 
@@ -42,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1852981395
+    locked: 0
+  - name: SceneObject
+    uniqueID: 1574360561
+    locked: 0
+  - name: Enemy
+    uniqueID: 3146680401
+    locked: 0
+  - name: Player
+    uniqueID: 3765318987
+    locked: 0
+  - name: PlayerParts
+    uniqueID: 3857434787
     locked: 0

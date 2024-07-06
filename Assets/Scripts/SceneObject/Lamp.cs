@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lamp : SceneObject
 {
+    public GameObject[] enemys;
     private void Awake()
     {
         _isOn = false;
@@ -15,7 +16,13 @@ public class Lamp : SceneObject
     }
     public override void Use(GameObject x)
     {
+        Debug.Log("lamp is used");
         if (x.tag != "Button") return;
+        foreach(GameObject i in enemys)
+        {
+            i.GetComponent<Enemy>().BeAttracted(transform.position);
+        }
+        /*
         if(_isOn)
         {
             EventManager.Instance.Event_noise.Invoke(transform.position, 0);
@@ -28,5 +35,6 @@ public class Lamp : SceneObject
             _isOn = true;
             gameObject.SetActive(true);
         }
+        */
     }
 }

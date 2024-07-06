@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public int blood;//剩下可以被击中的次数
-
     private CapsuleCollider2D _colliderTall;
     private CircleCollider2D _colliderShort;
     private Animator _animator;
@@ -14,15 +13,22 @@ public class Player : MonoBehaviour
     private Statemachine _stateMachine;
     public GameObject hand;
     public GameObject leg;
+    public GameObject bullet;
     private float _speed ;
-    private float _jumpHeight;
+    public float speed_slow;
+    public float speed_fast;
+    public float jumpHeight;
+    public float bulletSpeed;
+
     private uint _parts;
+    private Transform _gun;
 
     private void Awake()
     {
         InitComponent();
-        InitAttribute();
-        InitStateMachine();
+// test--------------------------------------
+        Init(3);
+//-------------------------------------------
     }
     private void Update()
     {
@@ -33,9 +39,10 @@ public class Player : MonoBehaviour
     {
         _stateMachine.OnFixedUpdate();
     }
-    void InitStateMachine()
+    public void Init(uint state)
     {
-        _stateMachine = new Statemachine(this);
+        _stateMachine = new Statemachine(this , state);
+        _stateMachine.Init(this, state);
     }
     void InitComponent()
     {
@@ -43,14 +50,9 @@ public class Player : MonoBehaviour
         _colliderShort = gameObject.GetComponent<CircleCollider2D>();
         _colliderTall = gameObject.GetComponent<CapsuleCollider2D>();
         _animator = gameObject.GetComponent<Animator>();
-        if (_animator == null)
-            Debug.Log("animator is null");
-    }
-    void InitAttribute()
-    {
-        _speed = 3;
-        _jumpHeight = 3;
-        _parts = 0;
+        _colliderShort.enabled = true;
+        _colliderTall.enabled = false;
+        _gun = transform.Find("Gun");
     }
 
     public Vector2 SetVelocity()
@@ -76,7 +78,7 @@ public class Player : MonoBehaviour
     }
     public Vector2 Jump()
     {
-        float jumpSpeed = Mathf.Sqrt(2 * _jumpHeight * Physics2D.gravity.y * -1);
+        float jumpSpeed = Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.y * -1);
         if(IsOnGround() && InputBuffer.Instance.IsJump())
         {
             Debug.Log("jump");
@@ -98,40 +100,71 @@ public class Player : MonoBehaviour
         uint x = _parts;
         if(x == 0)
         {
-            _animator.SetBool("00" , true);
+            _animator.SetBool("000" , true);
         }
         else if(x == 1)
         {
-            _animator.SetBool("01", true);
+            _animator.SetBool("001", true);
         }
         else if (x == 2)
         {
-            _animator.SetBool("10", true);
+            _animator.SetBool("010", true);
         }
         else if (x == 3)
         {
-            _animator.SetBool("11", true);
+            _animator.SetBool("011", true);
+        }
+        else if (x == 4)
+        {
+            _animator.SetBool("100", true);
+        }
+        else if (x == 5)
+        {
+            _animator.SetBool("101", true);
+        }
+        else if (x == 6)
+        {
+            _animator.SetBool("110", true);
+        }
+        else if (x == 7)
+        {
+            _animator.SetBool("111", true);
         }
     }
     public void SetParts(uint x)
     {
         _parts = x;
+        if(((x >> 1) & 1) == 1)
+        {
+            _speed = speed_fast;
+        }
+        else
+        {
+            _speed = speed_slow;
+        }
+
+        if(x >= 4)
+        {
+            _gun.gameObject.SetActive(true);
+        }
+        else
+        {
+            _gun.gameObject.SetActive(false);
+        }
     }
    
     public bool UseSceneObject()
     {
         if (InputBuffer.Instance.IsUse() == false) return false;
         Collider2D mid = Physics2D.OverlapBox(transform.position, new Vector2(2, 1) , 0 , LayerMask.GetMask("PlayerParts"));
-        //Debug.Log("layermaske = " + LayerMask.GetMask("PlayerParts"));
         if (mid != null)
         {
-            //Debug.Log(mid.name + mid.gameObject.layer);
             if (mid.GetComponent<SceneObject>() == null)
                 Debug.Log("SceneObject is null");
             mid.GetComponent<SceneObject>().Use(gameObject);
             return true;
         }
-        mid = Physics2D.OverlapCircle(transform.position, 0.3f, LayerMask.GetMask("SceneObject"));
+        mid = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("SceneObject"));
         if (mid != null)
         {
             mid.GetComponent<SceneObject>().Use(gameObject);
@@ -148,24 +181,56 @@ public class Player : MonoBehaviour
             _colliderShort.enabled = true;
             _colliderTall.enabled = false;
             _stateMachine.OnChangeState(StateEnum.Hand_1);
+            _gun.localPosition = new Vector2(0.45f, 0.6f);
         }
         else if (_parts == 1)
         {
             _colliderShort.enabled = true;
             _colliderTall.enabled = false;
             _stateMachine.OnChangeState(StateEnum.Hand_2);
+            _gun.localPosition = new Vector2(0.45f, 0.6f);
         }
         else if (_parts == 2)
         {
             _colliderShort.enabled = false;
             _colliderTall.enabled = true;
             _stateMachine.OnChangeState(StateEnum.Hand_1_Foot_2);
+            _gun.localPosition = new Vector2(0.45f, 2.8f);
         }
         else if (_parts == 3)
         {
             _colliderShort.enabled = false;
             _colliderTall.enabled = true;
             _stateMachine.OnChangeState(StateEnum.Hand_2_Foot_2);
+            _gun.localPosition = new Vector2(0.45f, 2.8f);
+        }
+        else if (_parts == 4)
+        {
+            _colliderShort.enabled = true;
+            _colliderTall.enabled = false;
+            _stateMachine.OnChangeState(StateEnum.Gun_Hand_1);
+            _gun.localPosition = new Vector2(0.45f, 0.6f);
+        }
+        else if (_parts == 5)
+        {
+            _colliderShort.enabled = true;
+            _colliderTall.enabled = false;
+            _stateMachine.OnChangeState(StateEnum.Gun_Hand_2);
+            _gun.localPosition = new Vector2(0.45f, 0.6f);
+        }
+        else if (_parts == 6)
+        {
+            _colliderTall.enabled = true;
+            _colliderShort.enabled = false;
+            _stateMachine.OnChangeState(StateEnum.Gun_Hand_1_Foot_2);
+            _gun.localPosition = new Vector2(0.45f, 2.8f);
+        }
+        else if (_parts == 7)
+        {
+            _colliderTall.enabled = true;
+            _colliderShort.enabled = false;
+            _stateMachine.OnChangeState(StateEnum.Gun_Hand_2_Foot_2);
+            _gun.localPosition = new Vector2(0.45f, 2.8f);
         }
     }
     public void AddPart(uint x)
@@ -178,6 +243,10 @@ public class Player : MonoBehaviour
     public void BeAttacked()
     {
         if (_parts == 0)
+        {
+            Debug.Log("you die");
+        }
+        else if(_parts == 4)
         {
             Debug.Log("you die");
         }
@@ -198,32 +267,81 @@ public class Player : MonoBehaviour
                 Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
                 _parts = 2;
             }
+            else if (_parts == 5)
+            {
+                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                _parts = 4;
+            }
+            else if (_parts == 6)
+            {
+                Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+                _parts = 4;
+            }
+            else if (_parts == 7)
+            {
+                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                _parts = 6;
+            }
+
         }
         ChangeState();
 
     }
      public void Split()
-        {
-            if (InputBuffer.Instance.IsSplit() == false || _parts == 0) return;
+    {
+        if (InputBuffer.Instance.IsSplit() == false || _parts == 0) return;
         Debug.Log(_parts);
 
-            if (_parts == 1)
-            {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
-                _parts = 0;
-            }
-            else if (_parts == 2)
-            {
-                Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
-                transform.position += Vector3.up * 2;
-                _parts = 0;
-            }
-            else if (_parts == 3)
-            {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
-                _parts = 2;
-            }
-            ChangeState();
+        if (_parts == 1)
+        {
+            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            _parts = 0;
         }
+        else if (_parts == 2)
+        {
+            Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+            transform.position += Vector3.up * 2;
+            _parts = 0;
+        }
+        else if (_parts == 3)
+        {
+            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            _parts = 2;
+        }
+        else if (_parts == 5)
+        {
+            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            _parts = 4;
+        }
+        else if (_parts == 6)
+        {
+            Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+            transform.position += Vector3.up * 2;
+            _parts = 4;
+        }
+        else if (_parts == 7)
+        {
+            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            _parts = 6;
+        }
+        ChangeState();
+    }
+
+    public void Attack()
+    {
+        //Debug.Log("mouse position = " + Mouse.current.position.ReadValue());
+        //Vector3 midDirection = InputBuffer.Instance.GetMousePosition();
+        Vector3 midDirection = Mouse.current.position.ReadValue();
+        midDirection -= _gun.position;
+        float angle = Mathf.Atan2(midDirection.y, midDirection.x) * Mathf.Rad2Deg;
+        _gun.eulerAngles = new Vector3(0, 0, angle);
+        if (InputBuffer.Instance.IsAttack() == false) return;
+
+        GameObject mid = Instantiate(bullet, _gun.transform.position + midDirection.normalized * 2, Quaternion.Euler(0, 0, 0));
+        mid.GetComponent<Bullet>().Init(midDirection.normalized, bulletSpeed);
+    }
 
 }
+
+//0.45 2.8  tall
+//0.45 0.6 
