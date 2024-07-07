@@ -23,6 +23,8 @@ public class Game : MonoBehaviourSingleton<Game>
     public void PlayerReborn()
     {
         player = Instantiate(playerPrefab).GetComponent<Player>();
+        Time.timeScale = 1f;
+        deadUI.gameObject.SetActive(false);
         
         //关卡重置
         LevelCheck level = levels[nowLevel];

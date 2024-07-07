@@ -22,6 +22,7 @@ public class Enemy_farGun : Enemy
     }
     private void Update()
     {
+
         if(_waitTime < 0)
         {
             if(FindPlayer())

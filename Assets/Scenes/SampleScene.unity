@@ -33211,7 +33211,7 @@ PrefabInstance:
     - target: {fileID: 4328371099242394939, guid: 39f0fbba5ec395f48aa2578bacefc702, type: 3}
       propertyPath: linkedSceneObject.Array.data[0]
       value: 
-      objectReference: {fileID: 1641529991}
+      objectReference: {fileID: 1384490495}
     - target: {fileID: 4328371099242394948, guid: 39f0fbba5ec395f48aa2578bacefc702, type: 3}
       propertyPath: m_Name
       value: Button_weight
@@ -130520,6 +130520,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5751332042313587329, guid: 4b1527431fa734b4f88554c04002128c, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1527431fa734b4f88554c04002128c, type: 3}
 --- !u!1001 &1122434060
@@ -130709,6 +130713,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1889108733214560182, guid: 83ecaa00d4ebf024e888352b8a1dbc5a, type: 3}
   m_PrefabInstance: {fileID: 1350112947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1384490495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3901468107068072906, guid: 529e06e043a8bf04480be981271933a9, type: 3}
+  m_PrefabInstance: {fileID: 154622680}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1417907688
 GameObject:
@@ -132460,11 +132469,6 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3901468107068072906, guid: 529e06e043a8bf04480be981271933a9, type: 3}
   m_PrefabInstance: {fileID: 777201264}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1641529991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4328371099242394948, guid: 39f0fbba5ec395f48aa2578bacefc702, type: 3}
-  m_PrefabInstance: {fileID: 245463338}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681559299 stripped
 GameObject:
@@ -139657,6 +139661,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5751332042313587329, guid: 4b1527431fa734b4f88554c04002128c, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751332042313587329, guid: 4b1527431fa734b4f88554c04002128c, type: 3}
       propertyPath: isFaceRight
       value: 1
       objectReference: {fileID: 0}
@@ -140206,11 +140214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.14
+      value: 25.02
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.8
+      value: 14.31
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.z

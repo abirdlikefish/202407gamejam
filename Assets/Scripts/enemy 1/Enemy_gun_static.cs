@@ -76,6 +76,16 @@ public class Enemy_gun_static : Enemy
                         _target = position;
                         _moveState = 2;
                         Animation_idleBeg();
+                        if (isFaceRight)
+                        {
+                            _faceDirection = 1;
+                            transform.rotation = Quaternion.Euler(0, 180, 0);
+                        }
+                        else
+                        {
+                            _faceDirection = -1;
+                            transform.rotation = Quaternion.Euler(0, 0, 0);
+                        }
                     }
                     else if(_moveState == 0)
                     {
@@ -83,6 +93,7 @@ public class Enemy_gun_static : Enemy
                         {
                             isWaitLamp = true;
                             haveWaitTime = 0;
+                            Animation_idleBeg();
                             return;
                         }
                         _target = position;
