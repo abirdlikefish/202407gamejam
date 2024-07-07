@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public GameObject hand;
     public GameObject leg;
     public GameObject bullet;
-    [HideInInspector]public List<GameObject> gears;//角色掉落的零件
+    [HideInInspector]public List<GameObject> gears = new List<GameObject>();//角色掉落的零件
     private float _speed ;
     public float speed_slow;
     public float speed_fast;
@@ -259,6 +259,7 @@ public class Player : MonoBehaviour
         else if(_parts == 4)
         {
             Debug.Log("you die");
+            Game.instance.PlayerDie(_parts);
         }
         else
         {
