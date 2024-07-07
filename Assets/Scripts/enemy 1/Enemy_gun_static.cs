@@ -19,8 +19,17 @@ public class Enemy_gun_static : Enemy
     private Animator _animator;
     public float bulletSpeed;
     public bool isFaceRight;
+
+
+    public float waitTime_lamp;
+    private float haveWaitTime;
+    private bool isWaitLamp;
+
     private void Start()
     {
+        isWaitLamp = false;
+        haveWaitTime = 0;
+
         position = transform.position;
         _moveState = 2;
         _target = position;
@@ -42,7 +51,13 @@ public class Enemy_gun_static : Enemy
     {
         if (_fireState == 0)
         {
-            if(_moveState != 2)
+            if (isWaitLamp && haveWaitTime < waitTime_lamp)
+            {
+                haveWaitTime += Time.deltaTime;
+                FindPlayer();
+                return;
+            }
+            if (_moveState != 2)
             {
                 _faceDirection = _target.x - transform.position.x > 0 ? 1 : -1;
                 transform.position += new Vector3(_faceDirection * Time.deltaTime * new Vector2(speed, 0).x, 0, 0);
@@ -64,8 +79,15 @@ public class Enemy_gun_static : Enemy
                     }
                     else if(_moveState == 0)
                     {
+                        if(isWaitLamp == false)
+                        {
+                            isWaitLamp = true;
+                            haveWaitTime = 0;
+                            return;
+                        }
                         _target = position;
                         _moveState = 1;
+                        isWaitLamp = false;
                     }
                 }
             }
@@ -118,6 +140,8 @@ public class Enemy_gun_static : Enemy
     {
         if (Physics2D.Raycast(transform.position + Vector3.up, new Vector2(_faceDirection, 0), findDistance, LayerMask.GetMask("Player")))
         {
+            isWaitLamp = false;
+
             _fireState = 1;
             _fireTime = fire_begTime;
             Animation_fireBeg();

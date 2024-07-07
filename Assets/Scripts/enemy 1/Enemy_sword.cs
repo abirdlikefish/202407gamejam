@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,15 +21,14 @@ public class Enemy_sword: Enemy
     public bool isFaceRight;
     private GameObject _player;
 
-    private void Awake()
-    {
-        _animator = transform.GetComponent<Animator>();
-        if(_animator == null)
-            Debug.Log("awake");
-    }
-
+    public float waitTime_lamp;
+    private float haveWaitTime;
+    private bool isWaitLamp;
     private void Start()
     {
+        haveWaitTime = 0;
+        isWaitLamp = false;
+
         position = transform.position;
         _moveState = 2;
         _target = position;
@@ -46,12 +44,19 @@ public class Enemy_sword: Enemy
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         //_faceDirection = 1;
+        _animator = transform.GetComponent<Animator>();
         Animation_idleBeg();
     }
     private void Update()
     {
         if (_attackState == 0)
         {
+            if(isWaitLamp&&haveWaitTime <waitTime_lamp)
+            {
+                haveWaitTime += Time.deltaTime;
+                FindPlayer();
+                return;
+            }
             if (_moveState != 2)
             {
                 _faceDirection = _target.x - transform.position.x > 0 ? 1 : -1;
@@ -74,8 +79,15 @@ public class Enemy_sword: Enemy
                     }
                     else if (_moveState == 0)
                     {
+                        if(isWaitLamp == false)
+                        {
+                            haveWaitTime = 0;
+                            isWaitLamp = true;
+                            return;
+                        }
                         _target = position;
                         _moveState = 1;
+                        isWaitLamp = false;
                     }
                 }
             }
@@ -118,6 +130,8 @@ public class Enemy_sword: Enemy
             _attackState = 1;
             _target = mid.point;
             _player = mid.collider.gameObject;
+
+            isWaitLamp = false;
         }
         else if(_moveState == 0)
         {
@@ -131,10 +145,6 @@ public class Enemy_sword: Enemy
     }
     private void Animation_runBeg()
     {
-        //if (_animator == null)
-        //{
-//            _animator = transform.GetComponent<Animator>();
-//        }
         _animator.SetBool("Trigger_move", true);
     }
     private void Animation_idleBeg()
@@ -176,8 +186,6 @@ public class Enemy_sword: Enemy
         Debug.Log("be attracted");
         _moveState = 0;
         _target = position;
-        if(_animator == null)
-            Debug.Log("null");
         Animation_runBeg();
     }
 }
