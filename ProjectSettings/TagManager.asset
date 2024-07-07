@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - PlayerParts
   - Ground
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: PlayerParts
     uniqueID: 3857434787
+    locked: 0
+  - name: Bullet
+    uniqueID: 934216263
     locked: 0

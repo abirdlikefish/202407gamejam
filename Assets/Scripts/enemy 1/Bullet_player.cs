@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet_player : MonoBehaviour
 {
-    //[HideInInspector] public Vector3 velocity;//子弹的飞行速度
-    //[Header("子弹的飞行速率")] public float speed;//子弹的飞行速率
     private float speed;
     [Header("子弹的存活时间")] public float lifeTime;//子弹的存活时间,超过后销毁自己
 
@@ -24,17 +22,9 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-//    private void OnTriggerEnter2D(Collider2D other)
     private void OnTriggerStay2D(Collider2D other)
     {
-        //Debug.Log(other.name + " " + other.tag);
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<Player>().BeAttacked();
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().BeAttacked();
             Destroy(gameObject);

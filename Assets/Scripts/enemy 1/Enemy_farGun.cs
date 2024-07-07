@@ -6,8 +6,6 @@ public class Enemy_farGun : Enemy
 {
     public float fireDistance;
     public float fireEndTime;
-    //    public Vector3 firePosition;
-    //private Vector3 _offset;
     public GameObject bullet;
     private GameObject _player;
     private Vector3 _direction;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_gun_static : Enemy
 {
-    public Vector2 position;
+    private Vector2 position;
     public float speed;
     public float fire_begTime;
     public float fire_endTime;
@@ -18,12 +18,23 @@ public class Enemy_gun_static : Enemy
     private int _faceDirection;
     private Animator _animator;
     public float bulletSpeed;
+    public bool isFaceRight;
     private void Start()
     {
-        _moveState = 1;
+        position = transform.position;
+        _moveState = 2;
         _target = position;
         _fireState = 0;
-        _faceDirection = 1;
+        if(isFaceRight)
+        {
+            _faceDirection = 1;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            _faceDirection = -1;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
         _animator = transform.GetComponent<Animator>();
         Animation_idleBeg();
     }

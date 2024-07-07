@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_sword: Enemy
 {
-    public Vector2 position;
+    private Vector2 position;
     public float speed;
     public float attack_endTime;
     public float attack_distance;
@@ -18,15 +18,27 @@ public class Enemy_sword: Enemy
     //0 findlight   1 findposition      2 static
     private Vector3 _target;
     private int _faceDirection;
+    public bool isFaceRight;
     private GameObject _player;
     private void Start()
     {
-        _moveState = 1;
+        position = transform.position;
+        _moveState = 2;
         _target = position;
         _attackState = 0;
-        _faceDirection = 1;
+        if (isFaceRight)
+        {
+            _faceDirection = 1;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            _faceDirection = -1;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        //_faceDirection = 1;
         _animator = transform.GetComponent<Animator>();
-        Animation_runBeg();
+        Animation_idleBeg();
     }
     private void Update()
     {
