@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject hand;
     public GameObject leg;
     public GameObject bullet;
+    [HideInInspector]public List<GameObject> gears;//角色掉落的零件
     private float _speed ;
     public float speed_slow;
     public float speed_fast;
@@ -263,32 +264,32 @@ public class Player : MonoBehaviour
         {
             if (_parts == 1)
             {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero))); ;
                 _parts = 0;
             }
             else if (_parts == 2)
             {
-                Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero)));
                 _parts = 0;
             }
             else if (_parts == 3)
             {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
                 _parts = 2;
             }
             else if (_parts == 5)
             {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
                 _parts = 4;
             }
             else if (_parts == 6)
             {
-                Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero)));
                 _parts = 4;
             }
             else if (_parts == 7)
             {
-                Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+                gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
                 _parts = 6;
             }
 
@@ -303,36 +304,36 @@ public class Player : MonoBehaviour
 
         if (_parts == 1)
         {
-            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
             _parts = 0;
         }
         else if (_parts == 2)
         {
-            Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero)));
             transform.position += Vector3.up * 2;
             _rb.velocity = new Vector3(_rb.velocity.x, 5);
             _parts = 0;
         }
         else if (_parts == 3)
         {
-            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
             _parts = 2;
         }
         else if (_parts == 5)
         {
-            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
             _parts = 4;
         }
         else if (_parts == 6)
         {
-            Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero)));
             transform.position += Vector3.up * 2;
             _rb.velocity = new Vector3(_rb.velocity.x, 5);
             _parts = 4;
         }
         else if (_parts == 7)
         {
-            Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero));
+            gears.Add(Instantiate(hand, transform.position, Quaternion.Euler(Vector3.zero)));
             _parts = 6;
         }
         ChangeState();

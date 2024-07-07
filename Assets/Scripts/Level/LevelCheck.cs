@@ -21,6 +21,7 @@ public class LevelCheck : MonoBehaviour
         for (int i = 0; i < enemies.Count; ++i)
         {
             nowEnemies.Add(Instantiate(enemies[i], enemies[i].transform.position, quaternion.identity));
+            nowEnemies[i].SetActive(true);
         }
     }
     //关卡重置前将原有的对象清除
