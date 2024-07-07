@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         InitComponent();
 // test--------------------------------------
-        Init(3);
+        Init(7);
 //-------------------------------------------
     }
     private void Update()
@@ -78,10 +78,11 @@ public class Player : MonoBehaviour
     }
     public Vector2 Jump()
     {
+        //Debug.Log("isJump :" + IsOnGround());
         float jumpSpeed = Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.y * -1);
         if(IsOnGround() && InputBuffer.Instance.IsJump())
         {
-            Debug.Log("jump");
+            //Debug.Log("jump");
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
         }
         else
@@ -93,7 +94,14 @@ public class Player : MonoBehaviour
     private bool IsOnGround()
     {
 //        Debug.Log(Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground")));
-        return Physics2D.Raycast(transform.position, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
+        if(((_parts >> 1 ) & 1) == 1)
+        {
+            return Physics2D.Raycast(transform.position + Vector3.up * 0.2f, Vector2.down , 0.1f , LayerMask.GetMask("Ground"));
+        }
+        else
+        {
+            return Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        }
     }
     public void AnimationBeg()
     {
@@ -156,7 +164,7 @@ public class Player : MonoBehaviour
     public bool UseSceneObject()
     {
         if (InputBuffer.Instance.IsUse() == false) return false;
-        Collider2D mid = Physics2D.OverlapBox(transform.position, new Vector2(2, 1) , 0 , LayerMask.GetMask("PlayerParts"));
+        Collider2D mid = Physics2D.OverlapBox(transform.position + Vector3.up, new Vector2(2, 2) , 0 , LayerMask.GetMask("PlayerParts"));
         if (mid != null)
         {
             if (mid.GetComponent<SceneObject>() == null)
@@ -164,7 +172,7 @@ public class Player : MonoBehaviour
             mid.GetComponent<SceneObject>().Use(gameObject);
             return true;
         }
-        mid = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("SceneObject"));
+        mid = Physics2D.OverlapCircle(transform.position + Vector3.up, 1.5f, LayerMask.GetMask("SceneObject"));
         if (mid != null)
         {
             mid.GetComponent<SceneObject>().Use(gameObject);
@@ -302,6 +310,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
             transform.position += Vector3.up * 2;
+            _rb.velocity = new Vector3(_rb.velocity.x, 5);
             _parts = 0;
         }
         else if (_parts == 3)
@@ -318,6 +327,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(leg, transform.position, Quaternion.Euler(Vector3.zero));
             transform.position += Vector3.up * 2;
+            _rb.velocity = new Vector3(_rb.velocity.x, 5);
             _parts = 4;
         }
         else if (_parts == 7)
@@ -330,16 +340,16 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
-        //Debug.Log("mouse position = " + Mouse.current.position.ReadValue());
-        //Vector3 midDirection = InputBuffer.Instance.GetMousePosition();
         Vector3 midDirection = Mouse.current.position.ReadValue();
+        midDirection = Camera.main.ScreenToWorldPoint(midDirection);
+        //Debug.Log(midDirection);
         midDirection -= _gun.position;
         float angle = Mathf.Atan2(midDirection.y, midDirection.x) * Mathf.Rad2Deg;
         _gun.eulerAngles = new Vector3(0, 0, angle);
         if (InputBuffer.Instance.IsAttack() == false) return;
 
-        GameObject mid = Instantiate(bullet, _gun.transform.position + midDirection.normalized * 2, Quaternion.Euler(0, 0, 0));
-        mid.GetComponent<Bullet>().Init(midDirection.normalized, bulletSpeed);
+        GameObject mid = Instantiate(bullet, _gun.transform.position + midDirection.normalized * 3f , Quaternion.Euler(0, 0, 0));
+        mid.GetComponent<Bullet_player>().Init(midDirection.normalized, bulletSpeed);
     }
 
 }

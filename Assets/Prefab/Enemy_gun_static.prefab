@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1148286895
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a33663e9c86f6f542b348605445f0dca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +106,7 @@ MonoBehaviour:
   fire_endTime: 1
   findDistance: 5
   bullet: {fileID: 6660148966400871037, guid: fa7824eba74ecac41be2a0a4f4b1c7fb, type: 3}
+  bulletSpeed: 0
 --- !u!50 &1438139835
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +141,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 2.1}
+  m_Offset: {x: 0.1, y: 1.75}
   m_Size: {x: 1.2071164, y: 3}
   m_Direction: 0
 --- !u!95 &1438139834
