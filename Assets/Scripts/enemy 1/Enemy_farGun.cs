@@ -13,12 +13,17 @@ public class Enemy_farGun : Enemy
     private Transform _gun;
     public float bulletSpeed;
 
+    private Warning warning;
+
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _waitTime = -1;
         _gun = transform.Find("Gun");
         //_offset = new Vector3(0, 1.8f, 0);
+
+        warning = transform.Find("Warning").GetComponent<Warning>();
     }
     private void Update()
     {
@@ -50,6 +55,8 @@ public class Enemy_farGun : Enemy
             float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
             _gun.eulerAngles = new Vector3(0, 0, angle);
             Fire();
+
+            warning.Beg();
             return true;
         }
         else

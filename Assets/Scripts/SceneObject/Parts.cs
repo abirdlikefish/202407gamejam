@@ -31,7 +31,7 @@ public class Parts : SceneObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_rb.velocity.magnitude < attackNeedSpeed) return;
+        if (Mathf.Abs(_rb.velocity.y) < attackNeedSpeed) return;
         if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().BeAttacked();

@@ -79,6 +79,7 @@ public class Enemy_gun : Enemy
                     _target = position_1;
                     _moveState = 1;
                     isWaitLamp = false;
+                    Animation_runBeg();
                 }
             }
             FindPlayer();

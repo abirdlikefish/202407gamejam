@@ -24,6 +24,10 @@ public class Enemy_sword: Enemy
     public float waitTime_lamp;
     private float haveWaitTime;
     private bool isWaitLamp;
+
+
+    private Warning warning;
+
     private void Start()
     {
         haveWaitTime = 0;
@@ -46,6 +50,10 @@ public class Enemy_sword: Enemy
         //_faceDirection = 1;
         _animator = transform.GetComponent<Animator>();
         Animation_idleBeg();
+
+
+        warning = transform.Find("Warning").GetComponent<Warning>();
+
     }
     private void Update()
     {
@@ -96,6 +104,7 @@ public class Enemy_sword: Enemy
                             Animation_idleBeg();
                             return;
                         }
+                        Animation_runBeg();
                         _target = position;
                         _moveState = 1;
                         isWaitLamp = false;
@@ -114,6 +123,7 @@ public class Enemy_sword: Enemy
                 Attack();
                 _attackState = 2;
                 _attackTime = attack_endTime;
+                warning.Beg();
             }
         }
         else
