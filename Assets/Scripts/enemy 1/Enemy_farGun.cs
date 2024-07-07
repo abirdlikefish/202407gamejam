@@ -38,6 +38,7 @@ public class Enemy_farGun : Enemy
 
     private bool FindPlayer()
     {
+        if (_player.layer == 13) return false;
         if ((_gun.position - _player.transform.position).magnitude > fireDistance) return false;
         Vector3 midDirection = (_player.transform.position + Vector3.up * 0.3f - _gun.position);
         RaycastHit2D mid = Physics2D.Raycast(_gun.position, midDirection, fireDistance, LayerMask.GetMask("Ground", "Player"));

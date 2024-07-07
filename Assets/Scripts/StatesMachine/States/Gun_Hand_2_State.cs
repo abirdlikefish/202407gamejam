@@ -17,8 +17,9 @@ public class Gun_Hand_2_State : State
     {
         //base.OnUpdate();
 
-        player.SetVelocity();//水平移动
         player.UseSceneObject();
+        if (player.isHide) return;
+        player.SetVelocity();//水平移动
         player.Split();
         player.Attack();
     }

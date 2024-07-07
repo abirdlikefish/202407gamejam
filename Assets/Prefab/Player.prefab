@@ -189,6 +189,7 @@ MonoBehaviour:
   hand: {fileID: 9167005100789755579, guid: 7b96c54c729a75743899d7a04d0000b6, type: 3}
   leg: {fileID: 7994290093382941250, guid: f04da0611e57f3842bc2e9ebabd8faeb, type: 3}
   bullet: {fileID: 1463470757374983315, guid: 8052aa0378dacb44daf5c7aa6487612d, type: 3}
+  gears: []
   speed_slow: 1
   speed_fast: 3
   jumpHeight: 3.7
@@ -264,6 +265,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0.5}
+  m_Offset: {x: -0.05, y: 0.7}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.75

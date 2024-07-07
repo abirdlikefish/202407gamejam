@@ -18,7 +18,8 @@ public class Hand_1_State : State
     {
         //base.OnUpdate();
 
-        player.SetVelocity();
         player.UseSceneObject();
+        if (player.isHide) return;
+        player.SetVelocity();
     }
 }

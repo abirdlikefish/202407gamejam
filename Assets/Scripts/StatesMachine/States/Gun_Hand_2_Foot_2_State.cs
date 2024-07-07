@@ -17,9 +17,10 @@ public class Gun_Hand_2_Foot_2_State : State
     {
         //base.OnUpdate();
 
+        player.UseSceneObject();
+        if (player.isHide) return;
         player.SetVelocity();//Ë®Æ½ÒÆ¶¯
         player.Jump();//ÌøÔ¾
-        player.UseSceneObject();
         player.Split();
         player.Attack();
     }

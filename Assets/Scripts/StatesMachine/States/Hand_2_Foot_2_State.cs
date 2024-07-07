@@ -17,9 +17,10 @@ public class Hand_2_Foot_2_State : State
     {
         //base.OnUpdate();
 
+        player.UseSceneObject();
+        if (player.isHide) return;
         player.SetVelocity();//水平移动
         player.Jump();//跳跃
-        player.UseSceneObject();
         player.Split();
     }
 }

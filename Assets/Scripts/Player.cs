@@ -21,12 +21,15 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     public float bulletSpeed;
 
+    public bool isHide;
+
     private uint _parts;
     private Transform _gun;
 
     private void Awake()
     {
         InitComponent();
+        isHide = false;
 // test--------------------------------------
         Init(7);
 //-------------------------------------------
@@ -354,6 +357,27 @@ public class Player : MonoBehaviour
         mid.GetComponent<Bullet_player>().Init(midDirection.normalized, bulletSpeed);
     }
 
+    public void Hide()
+    {
+        if(isHide)
+        {
+            isHide = false;
+            gameObject.layer = 8;
+            //Color mid = transform.GetComponent<SpriteRenderer>().color;
+            //transform.GetComponent<SpriteRenderer>().color = new Color(mid.r, mid.g, mid.b, 0.2f);
+            transform.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+            _gun.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            isHide = true;
+            gameObject.layer = 13;
+            transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.3f);
+            _gun.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.3f);
+            _rb.velocity = Vector3.zero;
+            _animator.SetBool("IsMove", false);
+        }
+    }
 }
 
 //0.45 2.8  tall
