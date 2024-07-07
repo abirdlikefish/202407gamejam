@@ -18,8 +18,17 @@ public class Enemy_gun : Enemy
     private int _faceDirection;
     private Animator _animator;
     public float bulletSpeed;
+
+
+    public float waitTime_lamp;
+    private float haveWaitTime;
+    private bool isWaitLamp;
+
     private void Start()
     {
+        isWaitLamp = false;
+        haveWaitTime = 0;
+
         _moveState = 1;
         _target = position_1;
         _fireState = 0;
@@ -30,6 +39,12 @@ public class Enemy_gun : Enemy
     {
         if(_fireState == 0)
         {
+            if (isWaitLamp && haveWaitTime < waitTime_lamp)
+            {
+                haveWaitTime += Time.deltaTime;
+                FindPlayer();
+                return;
+            }
             _faceDirection = _target.x - transform.position.x > 0 ? 1 : -1;
             transform.position += new Vector3(_faceDirection * Time.deltaTime * new Vector2(speed, 0).x , 0 , 0 );
             if(_faceDirection == 1)
@@ -54,8 +69,15 @@ public class Enemy_gun : Enemy
                 }
                 else
                 {
+                    if (isWaitLamp == false)
+                    {
+                        isWaitLamp = true;
+                        haveWaitTime = 0;
+                        return;
+                    }
                     _target = position_1;
                     _moveState = 1;
+                    isWaitLamp = false;
                 }
             }
             FindPlayer();
@@ -97,6 +119,8 @@ public class Enemy_gun : Enemy
         //Debug.Log("findind");
         if(Physics2D.Raycast(transform.position + Vector3.up, new Vector2(_faceDirection, 0), findDistance, LayerMask.GetMask("Player")))
         {
+            isWaitLamp = false;
+
             _fireState = 1;
             _fireTime = fire_begTime;
             Animation_fireBeg();
