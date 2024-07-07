@@ -6,7 +6,7 @@ public class Button : SceneObject
 {
     public Sprite picture_button_on;
     public Sprite picture_button_off;
-    public GameObject[] linkedSceneObject;
+    public List<GameObject> linkedSceneObject;
     private SpriteRenderer _render;
     private bool _state;
     private void Awake()

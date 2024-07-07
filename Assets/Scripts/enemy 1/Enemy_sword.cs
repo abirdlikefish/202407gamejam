@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,14 @@ public class Enemy_sword: Enemy
     private int _faceDirection;
     public bool isFaceRight;
     private GameObject _player;
+
+    private void Awake()
+    {
+        _animator = transform.GetComponent<Animator>();
+        if(_animator == null)
+            Debug.Log("awake");
+    }
+
     private void Start()
     {
         position = transform.position;
@@ -37,7 +46,6 @@ public class Enemy_sword: Enemy
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         //_faceDirection = 1;
-        _animator = transform.GetComponent<Animator>();
         Animation_idleBeg();
     }
     private void Update()
@@ -123,6 +131,10 @@ public class Enemy_sword: Enemy
     }
     private void Animation_runBeg()
     {
+        //if (_animator == null)
+        //{
+//            _animator = transform.GetComponent<Animator>();
+//        }
         _animator.SetBool("Trigger_move", true);
     }
     private void Animation_idleBeg()
@@ -164,6 +176,8 @@ public class Enemy_sword: Enemy
         Debug.Log("be attracted");
         _moveState = 0;
         _target = position;
+        if(_animator == null)
+            Debug.Log("null");
         Animation_runBeg();
     }
 }

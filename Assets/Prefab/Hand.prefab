@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partId: 1
+  attackNeedSpeed: 10
 --- !u!50 &9167005100789755577
 Rigidbody2D:
   serializedVersion: 4

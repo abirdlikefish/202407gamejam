@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public bool isHide;
 
-    private uint _parts;
+    public uint _parts;
     private Transform _gun;
 
     private void Awake()
@@ -32,11 +32,12 @@ public class Player : MonoBehaviour
         InitComponent();
         isHide = false;
 // test--------------------------------------
-        Init(7);
+        Init(1);
 //-------------------------------------------
     }
     private void Update()
     {
+        //Debug.Log(_parts);
         _stateMachine.OnUpdate();
         _stateMachine.OnLateUpdate();
     }

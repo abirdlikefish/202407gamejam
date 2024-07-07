@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lamp : SceneObject
 {
-    public GameObject[] enemys;
+    public List<GameObject> enemys;
     private void Awake()
     {
         _isOn = false;

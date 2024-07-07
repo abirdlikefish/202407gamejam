@@ -9,8 +9,11 @@ public class Game : MonoBehaviourSingleton<Game>
     public int nowLevel = 0;//当前所在关卡的id
     public CameraMove camera;
     public uint playerState;
+    
     public Player player;
+    public GameObject playerPrefab;
 
+    
     public Canvas deadUI;
     
     //玩家死亡时,将它掉落的零件全部销毁;复活时以最高零件进度复活
@@ -19,6 +22,8 @@ public class Game : MonoBehaviourSingleton<Game>
 
     public void PlayerReborn()
     {
+        player = Instantiate(playerPrefab).GetComponent<Player>();
+        
         //关卡重置
         LevelCheck level = levels[nowLevel];
         //销毁当前部分关卡中的所有敌人
@@ -64,6 +69,8 @@ public class Game : MonoBehaviourSingleton<Game>
             }
         }
         player.gears.Clear();
+        
+        Destroy(player.gameObject);
         
         deadUI.gameObject.SetActive(true);
         Time.timeScale = 0f;

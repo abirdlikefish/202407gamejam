@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,15 +17,29 @@ public class LevelCheck : MonoBehaviour
 
     public List<GameObject> nowEnemies;//当前关卡生成的敌人
 
+    public Lamp lamp;
+
     public void LevelInit()
     {
+        List<GameObject> temp = new List<GameObject>();
         for (int i = 0; i < enemies.Count; ++i)
         {
             nowEnemies.Add(
                 Instantiate(enemies[i], 
                     new Vector3(enemies[i].transform.position.x,enemies[i].transform.position.y,0), 
-                quaternion.identity));
+                    quaternion.identity));
             nowEnemies[i].SetActive(true);
+            if (lamp != null)
+            {
+                if (lamp.enemys.Contains(enemies[i]))
+                {
+                    temp.Add(nowEnemies[i]);
+                }
+            }
+        }
+        if (lamp != null)
+        {
+            lamp.enemys = temp;
         }
     }
     //关卡重置前将原有的对象清除

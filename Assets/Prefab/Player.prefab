@@ -190,10 +190,12 @@ MonoBehaviour:
   leg: {fileID: 7994290093382941250, guid: f04da0611e57f3842bc2e9ebabd8faeb, type: 3}
   bullet: {fileID: 1463470757374983315, guid: 8052aa0378dacb44daf5c7aa6487612d, type: 3}
   gears: []
-  speed_slow: 1
-  speed_fast: 3
+  speed_slow: 3
+  speed_fast: 5
   jumpHeight: 3.7
   bulletSpeed: 3
+  isHide: 0
+  _parts: 0
 --- !u!50 &4493120981923789282
 Rigidbody2D:
   serializedVersion: 4
