@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65b3d23b-eef4-4d4b-90f3-92d585096f29" name="更改" comment="检测点通知相机移动实现">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2024CIGA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2024CIGA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Foot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Foot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Hand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Hand.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelCheck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Lamp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Lamp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_sword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_sword.cs" afterDir="false" />
-    </list>
+    <list default="true" id="65b3d23b-eef4-4d4b-90f3-92d585096f29" name="更改" comment="hhh" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,13 +15,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/d6/9fe82510/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Buttle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState/EnemyFarAct_2State.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +24,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/FarActEnemy_1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonobehaiorSingleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scripts/enemy 1/Enemy_sword.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scripts/enemy 1/Enemy_sword.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scripts/enemy 1/Enemy_sword.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scripts/enemy 1/Enemy_sword.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -131,7 +118,7 @@
       <updated>1720177666393</updated>
       <workItem from="1720177669338" duration="40999000" />
       <workItem from="1720232601561" duration="35406000" />
-      <workItem from="1720323450821" duration="6875000" />
+      <workItem from="1720323450821" duration="7512000" />
     </task>
     <task id="LOCAL-00001" summary="状态机构建">
       <option name="closed" value="true" />
@@ -189,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720218475311</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="hhh">
+      <option name="closed" value="true" />
+      <created>1720331326609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720331326609</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +217,7 @@
     <MESSAGE value="拉取master" />
     <MESSAGE value="检查点基础实现" />
     <MESSAGE value="检测点通知相机移动实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="检测点通知相机移动实现" />
+    <MESSAGE value="hhh" />
+    <option name="LAST_COMMIT_MESSAGE" value="hhh" />
   </component>
 </project>
