@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class Btn_Reborn : MonoBehaviour
 {
-    private void OnMouseDown()
+    public void Reborn()
     {
         Game.instance.PlayerReborn();
         Time.timeScale = 1f;
         transform.parent.gameObject.SetActive(false);
     }
+
 }

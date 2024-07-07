@@ -20,7 +20,10 @@ public class LevelCheck : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; ++i)
         {
-            nowEnemies.Add(Instantiate(enemies[i], enemies[i].transform.position, quaternion.identity));
+            nowEnemies.Add(
+                Instantiate(enemies[i], 
+                    new Vector3(enemies[i].transform.position.x,enemies[i].transform.position.y,0), 
+                quaternion.identity));
             nowEnemies[i].SetActive(true);
         }
     }
@@ -44,13 +47,11 @@ public class LevelCheck : MonoBehaviour
             if (other.transform.position.x > transform.position.x)//向右/向上走
             {
                 Game.instance.nowLevel = id;
-                LevelInit();
                 Game.instance.EnterLevel(id-1);
             }
             else if (other.transform.position.y > transform.position.y && Game.instance.nowLevel != 10&& Game.instance.nowLevel != 5)
             {
                 Game.instance.nowLevel = id;
-                LevelInit();
                 Game.instance.EnterLevel(id-1);
             }
             else//向左/向下走

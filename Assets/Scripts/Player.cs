@@ -14,14 +14,15 @@ public class Player : MonoBehaviour
     public GameObject hand;
     public GameObject leg;
     public GameObject bullet;
-    [HideInInspector]public List<GameObject> gears = new List<GameObject>();//角色掉落的零件
+    //[HideInInspector]public List<GameObject> gears = new List<GameObject>();//角色掉落的零件
+    public List<GameObject> gears = new List<GameObject>();//角色掉落的零件
     private float _speed ;
     public float speed_slow;
     public float speed_fast;
     public float jumpHeight;
     public float bulletSpeed;
 
-    private uint _parts;
+    public uint _parts;
     private Transform _gun;
 
     private void Awake()
@@ -254,12 +255,12 @@ public class Player : MonoBehaviour
         if (_parts == 0)
         {
             Debug.Log("you die");
-            Game.instance.PlayerDie(_parts);
+            Game.instance.PlayerDie();
         }
         else if(_parts == 4)
         {
             Debug.Log("you die");
-            Game.instance.PlayerDie(_parts);
+            Game.instance.PlayerDie();
         }
         else
         {
