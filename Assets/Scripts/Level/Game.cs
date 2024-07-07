@@ -24,14 +24,23 @@ public class Game : MonoBehaviourSingleton<Game>
         level.LevelInit();
     }
 
-    public void EnterLevel()
+    public void EnterLevel(int lastLevel)
     {
-        Debug.Log("aaaaa" +
-                  "");
-        camera.nextCheck = levels[nowLevel+1].transform.position;
+        Debug.Log(nowLevel);
+        if (nowLevel == 13)
+        {
+            camera.nextCheck = levels[13].transform.position;
+        }
+        else
+        {
+            camera.nextCheck = levels[nowLevel+1].transform.position;
+        }
+        
+        //将上一关的所有敌人disactive
+        //将当前关的所有敌人active
     }
 
-    public void PlayerDie()
+    public void PlayerDie(uint playerState)
     {
         
     }

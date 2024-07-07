@@ -4,224 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65b3d23b-eef4-4d4b-90f3-92d585096f29" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Button.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Button.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Button_weight.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Button_weight.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Door.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Door.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Elevator.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Elevator.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_farGun.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_farGun.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_gun.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_gun.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_gun_static.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_gun_static.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_sword.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Enemy_sword.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Gun.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Gun.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Lamp.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Lamp.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button_weight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Door.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Elevator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_1_Foot_2_State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_1_Foot_2_State.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_1_State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_1_State.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_2_Foot_2_State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_2_Foot_2_State.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_2_State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Gun_Hand_2_State.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Bullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Bullet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_farGun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_farGun.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_gun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_gun.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_gun_static.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_gun_static.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_sword.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/enemy 1/Enemy_sword.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_gun.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_gun.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_attack.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_attack.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_run.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Enemy_sword_run.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_Foot_2_idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_Foot_2_idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_Foot_2_move.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_Foot_2_move.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_move.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_1_move.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_Foot_2_idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_Foot_2_idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_Foot_2_move.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_Foot_2_move.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_move.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Gun_Hand_2_move.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_1.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_1.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_2.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_2.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_3.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/Hand_-1_Foot_2_3.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project/.idea/.idea.2024CIGA/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project/.idea/.idea.2024CIGA/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project/.idea/.idea.2024CIGA/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/gamejam/My project/.idea/.idea.2024CIGA/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪6.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/Right/开枪7.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/初始3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手2 (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手2 (2).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手3 (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/no leg/双手3 (2).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手带枪3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手无枪跳.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手无枪跳.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手有枪跳.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手有枪跳.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/丢手走动3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/刀怪3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/刀怪/挥刀4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/完整带枪3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开关off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开关off.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开关on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开关on.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪6.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/开枪7.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/按钮off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/按钮off.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/按钮on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/按钮on.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/有手无枪跳.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/有手无枪跳.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/有手有枪跳.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/有手有枪跳.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/unity_psd/走动2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Buttle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Buttle.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Bullet.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputSystem.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager/InputSystem.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Lamp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Lamp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/Statemachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/Statemachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_0_Foot_2_State.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_0_Foot_2_State.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Elevator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_0_State.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_0_State.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Button_weight.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_1_State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/Hand_1_State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/IdleState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatesMachine/States/IdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneObject/Door.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Foot_2_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Foot_2_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Foot_2_Move.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Foot_2_Move.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Idle.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Move.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Move.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Move.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_1_Move.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Foot_2_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Foot_2_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Foot_2_Move.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Foot_2_Move.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Idle.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Move.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Move.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Move.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Hand_2_Move.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Anim/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Anim/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/PSD/双手2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/双手2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/PSD/双手3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/PSD/双手3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    <list default="true" id="65b3d23b-eef4-4d4b-90f3-92d585096f29" name="更改" comment="检查点基础实现">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2024CIGA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2024CIGA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelCheck.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +19,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/d6/9fe82510/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/my_unity_project/2024CIGA/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Buttle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState/EnemyFarAct_2State.cs" root0="FORCE_HIGHLIGHTING" />
@@ -255,7 +44,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "正在合并 master",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -319,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720177666393</updated>
       <workItem from="1720177669338" duration="40999000" />
-      <workItem from="1720232601561" duration="26176000" />
+      <workItem from="1720232601561" duration="27497000" />
     </task>
     <task id="LOCAL-00001" summary="状态机构建">
       <option name="closed" value="true" />
@@ -397,6 +186,7 @@
     <MESSAGE value="拉取player" />
     <MESSAGE value="更新分支" />
     <MESSAGE value="拉取master" />
-    <option name="LAST_COMMIT_MESSAGE" value="拉取master" />
+    <MESSAGE value="检查点基础实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="检查点基础实现" />
   </component>
 </project>

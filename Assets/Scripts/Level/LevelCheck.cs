@@ -40,15 +40,22 @@ public class LevelCheck : MonoBehaviour
     {
         if (other.CompareTag("Player"))//玩家穿过检测点
         {
-            if (other.transform.position.x > transform.position.x)
+            if (other.transform.position.x > transform.position.x)//向右/向上走
             {
                 Game.instance.nowLevel = id;
                 LevelInit();
-                Game.instance.EnterLevel();
+                Game.instance.EnterLevel(id-1);
             }
-            else
+            else if (other.transform.position.y > transform.position.y && Game.instance.nowLevel != 10&& Game.instance.nowLevel != 5)
+            {
+                Game.instance.nowLevel = id;
+                LevelInit();
+                Game.instance.EnterLevel(id-1);
+            }
+            else//向左/向下走
             {
                 Game.instance.nowLevel = id - 1;
+                Game.instance.EnterLevel(id);
             }
         }
     }
