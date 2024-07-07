@@ -73,6 +73,7 @@ public class Enemy_gun : Enemy
                     {
                         isWaitLamp = true;
                         haveWaitTime = 0;
+                        Animation_idleBeg();
                         return;
                     }
                     _target = position_1;
