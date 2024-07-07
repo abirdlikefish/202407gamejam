@@ -25,6 +25,8 @@ public class Enemy_gun_static : Enemy
     private float haveWaitTime;
     private bool isWaitLamp;
 
+    private Warning warning;
+
     private void Start()
     {
         isWaitLamp = false;
@@ -46,6 +48,8 @@ public class Enemy_gun_static : Enemy
         }
         _animator = transform.GetComponent<Animator>();
         Animation_idleBeg();
+
+        warning = transform.Find("Warning").GetComponent<Warning>();
     }
     private void Update()
     {
@@ -96,6 +100,7 @@ public class Enemy_gun_static : Enemy
                             Animation_idleBeg();
                             return;
                         }
+                        Animation_runBeg();
                         _target = position;
                         _moveState = 1;
                         isWaitLamp = false;
@@ -156,6 +161,7 @@ public class Enemy_gun_static : Enemy
             _fireState = 1;
             _fireTime = fire_begTime;
             Animation_fireBeg();
+            warning.Beg();
         }
     }
     private void Fire()

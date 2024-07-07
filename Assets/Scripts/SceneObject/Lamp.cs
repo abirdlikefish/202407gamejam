@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Lamp : SceneObject
 {
-    public List<GameObject> enemys;
+    public GameObject[] enemys;
+    [SerializeField]public Sprite picture_on;
+    public Sprite picture_off;
+    private SpriteRenderer _render;
     private void Awake()
     {
-        _isOn = false;
+        _isOn = true;
+        _render = transform.GetComponent<SpriteRenderer>();
+        _render.sprite = picture_on;
     }
     private bool _isOn ;
-    public void Init(bool isOn)
-    {
-        _isOn = isOn;
-    }
+    
+    
     public override void Use(GameObject x)
     {
         Debug.Log("lamp is used");
@@ -22,19 +25,17 @@ public class Lamp : SceneObject
         {
             i.GetComponent<Enemy>().BeAttracted(transform.position);
         }
-        /*
+
         if(_isOn)
         {
-            EventManager.Instance.Event_noise.Invoke(transform.position, 0);
             _isOn = false;
-            gameObject.SetActive(false);
+            _render.sprite = picture_off;
         }
         else
         {
-            EventManager.Instance.Event_noise.Invoke(transform.position, 0);
             _isOn = true;
-            gameObject.SetActive(true);
+            _render.sprite = picture_on;
         }
-        */
+
     }
 }
