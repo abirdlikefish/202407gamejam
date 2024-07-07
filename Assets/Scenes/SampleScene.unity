@@ -254,7 +254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &35100957
 GameObject:
@@ -33652,7 +33652,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 91fb46dab661272498160d4a6693880a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138115,15 +138115,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.73
+      value: -4.85
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.96
+      value: 17.15
       objectReference: {fileID: 0}
     - target: {fileID: 4493120981923789292, guid: 96ce4c2cbe3c2ec44811e99bf73fb104, type: 3}
       propertyPath: m_LocalPosition.z
