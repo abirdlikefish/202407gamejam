@@ -28,12 +28,13 @@ public class Game : MonoBehaviourSingleton<Game>
         
         //主角重置
         player.Init(playerState);
-        player.transform.position = levels[nowLevel].rebornPos.position;
+        Vector3 pos = levels[nowLevel].rebornPos.position;
+        player.transform.position = new Vector3(pos.x,pos.y,0);
     }
 
     public void EnterLevel(int lastLevel)
-    {
-        Debug.Log(nowLevel);
+    { 
+        playerState = player._parts;
         if (nowLevel == 13)
         {
             camera.nextCheck = levels[13].transform.position;
@@ -52,9 +53,8 @@ public class Game : MonoBehaviourSingleton<Game>
         levels[nowLevel].LevelInit();
     }
     //玩家死亡时的行为
-    public void PlayerDie(uint playerState)
+    public void PlayerDie()
     {
-        this.playerState = playerState;
         //清除所有玩家掉落的零件
         for (int i = 0; i < player.gears.Count; ++i)
         {
